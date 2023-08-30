@@ -16,8 +16,8 @@
       },
       "ghcr.io/devcontainers/features/docker-in-docker:2": {
         "version": "2.4.0",
-        "moby": false,
-        "dockerDashComposeVersion": "v2"
+        "moby": true,
+        "dockerDashComposeVersion": "v1"
       },
       "ghcr.io/devcontainers-contrib/features/volta:1": {
         "version": "latest"
