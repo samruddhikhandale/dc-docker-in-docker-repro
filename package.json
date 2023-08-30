@@ -11,7 +11,7 @@
     "node": "18.17.0"
   },
   "devDependencies": {
-    "@devcontainers/cli": "0.51.1",
+    "@devcontainers/cli": "0.49.0",
     "nx": "16.5.1"
   },
   "repository": {
