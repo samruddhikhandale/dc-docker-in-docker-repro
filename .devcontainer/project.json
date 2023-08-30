@@ -16,10 +16,7 @@
         "options": {
           "commands": [
             {
-              "command": "devcontainer build --workspace-folder ./ --image-name ghcr.io/alcoitd/cms-devcontainer:latest"
-            },
-            {
-              "command": "nx run devcontainer:release"
+              "command": "devcontainer build --workspace-folder ./ --image-name ghcr.io/ontoneio/bug-repro:latest"
             }
           ],
           "parallel": false
