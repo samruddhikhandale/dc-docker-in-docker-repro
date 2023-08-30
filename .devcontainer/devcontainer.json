@@ -1,0 +1,52 @@
+{
+    "name": "dc-docker-in-docker-repro",
+    "build": {
+      "context": "../",
+      "dockerfile": "Dockerfile",
+      "args": {
+        "vscode": "true"
+      }
+    },
+    "features": {
+      "ghcr.io/devcontainers/features/common-utils:2": {
+        "upgradePackages": true,
+        "username": "vscode",
+        "userUid": "1000",
+        "userGid": "1000"
+      },
+      "ghcr.io/devcontainers/features/docker-in-docker:2": {
+        "version": "2.4.0",
+        "moby": true,
+        "dockerDashComposeVersion": "v2"
+      },
+      "ghcr.io/devcontainers-contrib/features/volta:1": {
+        "version": "latest"
+      }
+    },
+    "remoteUser": "vscode",
+    "userEnvProbe": "loginInteractiveShell",
+    "runArgs": ["--init", "--privileged"],
+    "overrideCommand": false,
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces,type=bind,consistency=cached",
+    "workspaceFolder": "/workspaces",
+    "remoteEnv": {
+      "PATH": "${containerEnv:PATH}:${containerEnv:GIT_CRED_MGR}",
+      "GIT_CRED_MGR": "${localEnv:GIT_CRED_MGR}"
+    },
+    "containerEnv": {
+      "WSLENV": "${localEnv:WSLENV}"
+    },
+    "mounts": [
+      "source=cms-devcontainer-extensions,target=/root/.vscode-server/extensions,type=volume",
+      "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
+    ],
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "nrwl.angular-console",
+          "ms-azuretools.vscode-docker"
+        ]
+      }
+    }
+  }
+  

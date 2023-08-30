@@ -1,0 +1,32 @@
+{
+    "affected": {
+      "defaultBase": "main"
+    },
+    "workspaceLayout": {
+      "appsDir": "apps",
+      "libsDir": "libs"
+    },
+    "tasksRunnerOptions": {
+      "default": {
+        "runner": "nx-cloud",
+        "options": {
+          "cacheableOperations": [
+            "build"
+          ]
+        }
+      }
+    },
+    "plugins": [],
+    "defaultProject": "dc-docker-in-docker-repro",
+    "targetDefaults": {
+      "build": {
+        "dependsOn": ["^build"],
+        "inputs": ["production", "^production"]
+      }
+    },
+    "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "namedInputs": {
+      "default": ["{projectRoot}/**/*", "sharedGlobals"]
+    }
+  }
+  

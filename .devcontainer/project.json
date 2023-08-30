@@ -1,0 +1,30 @@
+{
+    "name": "devcontainer",
+    "$schema": "../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "namedInputs": {
+      "production": ["./devcontainer.json","./Dockerfile"]
+    },
+    "targets": {
+      "build": {
+        "executor": "nx:run-commands",
+        "inputs": [
+          {
+            "externalDependencies": ["@devcontainers/cli"]
+          }
+        ],
+        "options": {
+          "commands": [
+            {
+              "command": "devcontainer build --workspace-folder ./ --image-name ghcr.io/alcoitd/cms-devcontainer:latest"
+            },
+            {
+              "command": "nx run devcontainer:release"
+            }
+          ],
+          "parallel": false
+        }
+      }
+    }
+}
+  

@@ -1,0 +1,25 @@
+{
+  "name": "dc-docker-in-docker-repro",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "refresh": "npm install --include-workspace-root --install-links --workspaces --exact",
+    "install-ci": "npm ci --include-workspace-root --install-links --workspaces --no-audit"
+  },
+  "volta": {
+    "node": "18.17.0"
+  },
+  "devDependencies": {
+    "@devcontainers/cli": "0.51.1",
+    "nx": "16.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ontoneio/dc-docker-in-docker-repro"
+  },
+  "workspaces": [
+    ".devcontainer"
+  ],
+  "nx": {}
+}
