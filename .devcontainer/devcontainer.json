@@ -29,13 +29,8 @@
     "overrideCommand": false,
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces,type=bind,consistency=cached",
     "workspaceFolder": "/workspaces",
-    "remoteEnv": {
-      "PATH": "${containerEnv:PATH}:${containerEnv:GIT_CRED_MGR}",
-      "GIT_CRED_MGR": "${localEnv:GIT_CRED_MGR}"
-    },
-    "containerEnv": {
-      "WSLENV": "${localEnv:WSLENV}"
-    },
+    "remoteEnv": {},
+    "containerEnv": {},
     "mounts": [
       "source=cms-devcontainer-extensions,target=/root/.vscode-server/extensions,type=volume",
       "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
