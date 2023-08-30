@@ -3,8 +3,7 @@
       "defaultBase": "main"
     },
     "workspaceLayout": {
-      "appsDir": "apps",
-      "libsDir": "libs"
+      "appsDir": ".devcontainer"
     },
     "tasksRunnerOptions": {
       "default": {
