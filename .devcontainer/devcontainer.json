@@ -14,9 +14,13 @@
         "userUid": "1000",
         "userGid": "1000"
       },
+      // "ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
+      //   "packages": "software-properties-common,wget,ca-certificates,build-essential,g++,libx11-dev,libxkbfile-dev,libsecret-1-dev,python-is-python3,xsel,make,maven,apache2,ngrok",
+      //   "preserve-apt-list": true
+      // },
       "ghcr.io/devcontainers/features/docker-in-docker:2": {
         "version": "latest",
-        "moby": true,
+        "moby": false,
         "dockerDashComposeVersion": "v2"
       },
       "ghcr.io/devcontainers-contrib/features/volta:1": {
@@ -35,6 +39,8 @@
       "source=cms-devcontainer-extensions,target=/root/.vscode-server/extensions,type=volume",
       "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
     ],
+    "postCreateCommand": "volta install node && bash -c 'npm install'",
+    
     "customizations": {
       "vscode": {
         "extensions": [
