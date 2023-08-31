@@ -21,7 +21,7 @@ RUN if [[ -z "$vscode" ]] ; then printf "\nERROR: This Dockerfile needs to be bu
 RUN mkdir -p $HOME/.vscode-server/extensions \
     && chown -R $USERNAME ${HOME}/.vscode-server
 
-RUN apt-get update -y && apt-get install -y software-properties-common wget ca-certificates build-essential g++ libx11-dev libxkbfile-dev libsecret-1-dev python-is-python3 xsel make maven apache2 ngrok && apt-get autoremove -y && apt-get clean -y
+RUN apt-get update -y && apt-get install -y software-properties-common wget ca-certificates build-essential g++ libx11-dev libxkbfile-dev libsecret-1-dev python-is-python3 xsel make maven apache2 && apt-get autoremove -y && apt-get clean -y
 
 FROM base as op_system
 
