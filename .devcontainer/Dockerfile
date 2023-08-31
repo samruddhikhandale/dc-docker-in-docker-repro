@@ -7,7 +7,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu-22.04 as base
 # BASE ARGS
 ARG INSTALL_ZSH="false"
 ARG UPGRADE_PACKAGES="true"
-ARG USE_MOBY="true"
+ARG USE_MOBY="false"
 ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
