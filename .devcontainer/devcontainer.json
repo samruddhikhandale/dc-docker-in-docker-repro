@@ -8,20 +8,21 @@
       }
     },
     "features": {
-      "ghcr.io/devcontainers/features/common-utils:2": {
-        "upgradePackages": true,
-        "username": "vscode",
-        "userUid": "1000",
-        "userGid": "1000"
-      },
+      // "ghcr.io/devcontainers/features/common-utils:2": {
+      //   "upgradePackages": true,
+      //   "username": "vscode",
+      //   "userUid": "1000",
+      //   "userGid": "1000"
+      // },
       // "ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
       //   "packages": "software-properties-common,wget,ca-certificates,build-essential,g++,libx11-dev,libxkbfile-dev,libsecret-1-dev,python-is-python3,xsel,make,maven,apache2,ngrok",
       //   "preserve-apt-list": true
       // },
       "ghcr.io/devcontainers/features/docker-in-docker:2": {
         "version": "latest",
-        "moby": false,
-        "dockerDashComposeVersion": "v2"
+        "moby": true,
+        "dockerDashComposeVersion": "v2",
+        "installDockerBuildx": true
       },
       "ghcr.io/devcontainers-contrib/features/volta:1": {
         "version": "latest"
