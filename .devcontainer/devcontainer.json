@@ -20,7 +20,7 @@
       // },
       "ghcr.io/devcontainers/features/docker-in-docker:2": {
         "version": "latest",
-        "moby": true,
+        "moby": false,
         "dockerDashComposeVersion": "v2",
         "installDockerBuildx": true
       },
@@ -36,7 +36,8 @@
     "workspaceFolder": "/workspaces",
     "remoteEnv": {},
     "containerEnv": {
-      "PATH": "${localEnv:PATH}"
+      "PATH": "${localEnv:PATH}",
+      "DOCKER_BIN": "${localEnv:DOCKER_BIN}"
     },
     "mounts": [
       "source=cms-devcontainer-extensions,target=/root/.vscode-server/extensions,type=volume",
