@@ -40,8 +40,6 @@ RUN wget https://github.com/ko1nksm/shdotenv/releases/latest/download/shdotenv -
 RUN chown -R ${USERNAME}:$(id -gn ${USERNAME}) $HOME/bin/shdotenv
 
 
-RUN groupadd docker
-RUN usermod -aG docker ${USERNAME}
 # PACKAGING
 FROM op_system as packaging
 
@@ -50,9 +48,3 @@ ARG RELEASE_VERSION
 
 LABEL org.opencontainers.image.created = ${BUILD_DATE}
 LABEL org.opencontainers.image.version = ${RELEASE_VERSION}
-
-# # Setting the ENTRYPOINT to docker-init.sh will configure non-root access to
-# # the Docker socket if "overrideCommand": false is set in devcontainer.json.
-# # The script will also execute CMD if you need to alter startup behaviors.
-ENTRYPOINT [ "/usr/local/share/docker-init.sh" ]
-CMD [ "sleep", "infinity" ]
