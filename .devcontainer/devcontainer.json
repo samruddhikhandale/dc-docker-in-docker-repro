@@ -35,7 +35,9 @@
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces,type=bind,consistency=cached",
     "workspaceFolder": "/workspaces",
     "remoteEnv": {},
-    "containerEnv": {},
+    "containerEnv": {
+      "PATH": "${localEnv:PATH}"
+    },
     "mounts": [
       "source=cms-devcontainer-extensions,target=/root/.vscode-server/extensions,type=volume",
       "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
